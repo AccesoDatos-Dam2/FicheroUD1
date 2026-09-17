@@ -33,10 +33,11 @@ public class fichero {
                 else{
                     System.out.println("No puedo crearlo ya existe");
                 }
-                }
-
+            }
+            long espacio=dirConfig.getFreeSpace() /1024/1024/1024;
+            System.out.println("Espacio libre en disco: "+espacio+" GB");
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            System.out.println("Error al manipular los ficheros ");
         }
 
     }

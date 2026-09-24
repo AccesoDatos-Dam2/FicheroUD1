@@ -1,12 +1,46 @@
 package Boletin1.Ejercicio1;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 public class fichero {
+	//Metodo que cargue los animes
+	public static Map<Integer,String> cargarAnimes(String rutaFichero){
+		Map<Integer,String> animes=new LinkedHashMap<>();
+		try(BufferedReader br= new BufferedReader(new FileReader(rutaFichero))){
+			String linea;
+			while((linea=br.readLine())!=null) {
+				linea=linea.trim();
+				if(linea.isEmpty()) continue;
+				
+				String[] partes=linea.split(" ", 2);
+				int codigo=Integer.parseInt(partes[0]);
+				String titulo=partes[1];
+			}
+		}catch(IOException e) {
+			System.out.println("Error al leer fichero de animes: "+e.getMessage());
+		}
+		return animes;
+	}
+	
+	public static Map<Integer,List<String>> cargarPersonajes(String rutaFichero){
+		Map<Integer,List<String>> personajesPorCodigo=new HashMap<>();
+		return personajesPorCodigo;
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		File fPers = new File("/home/alumno/IdeaProjects/githubAccesoDatos/Ficheros/src/Boletin1/Ejercicio1/personajes.txt");
+        File fAnime = new File("/home/alumno/IdeaProjects/githubAccesoDatos/Ficheros/src/Boletin1/Ejercicio1/animes.txt");
 
-    public static ArrayList<String> obtenerPersonajesPorCodigo(int codigoBuscado, File ficheroPersonajes) {
+		
+	}
+    /*public static ArrayList<String> obtenerPersonajesPorCodigo(int codigoBuscado, File ficheroPersonajes) {
         ArrayList<String> personajes = new ArrayList<>();
         try (Scanner sc = new Scanner(ficheroPersonajes)) {
             while (sc.hasNextLine()) {
@@ -101,5 +135,5 @@ public class fichero {
         } catch (FileNotFoundException e) {
             System.out.println("Error: No se encontró alguno de los ficheros. " + e.getMessage());
         }
-    }
+    }*/
 }

@@ -1,4 +1,4 @@
-package Boletin1.Ejercicio2;
+package boletin1.ejercicio2;
 
 public class Personaje {
 

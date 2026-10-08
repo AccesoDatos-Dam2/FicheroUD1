@@ -1,12 +1,14 @@
-package Boletin1.Ejercicio1;
+package boletin1.ejercicio1;
 
-import com.google.gson.annotations.SerializedName;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class fichero {
 	// Método que carga los animes desde un fichero y devuelve un Map (código -> título)
